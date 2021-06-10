@@ -1,0 +1,7 @@
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\publish\youtubedemonetcore.exe
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\publish\appsettings.Development.json
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\publish\appsettings.json
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\publish\youtubedemonetcore.dll
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\publish\youtubedemonetcore.deps.json
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\publish\youtubedemonetcore.runtimeconfig.json
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\publish\youtubedemonetcore.pdb

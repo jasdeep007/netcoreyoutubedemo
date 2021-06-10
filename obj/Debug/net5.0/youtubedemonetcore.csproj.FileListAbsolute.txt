@@ -7,7 +7,6 @@ C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\youtubedemonet
 C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\youtubedemonetcore.dll
 C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\ref\youtubedemonetcore.dll
 C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\youtubedemonetcore.pdb
-C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.csprojAssemblyReference.cache
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.AssemblyInfoInputs.cache
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.AssemblyInfo.cs
@@ -21,3 +20,4 @@ C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonet
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\ref\youtubedemonetcore.dll
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.pdb
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.genruntimeconfig.cache
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.csproj.AssemblyReference.cache
