@@ -21,3 +21,14 @@ C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\ref\youtubedem
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.pdb
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.genruntimeconfig.cache
 C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.csproj.AssemblyReference.cache
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\youtubedemonetcore.Views.dll
+C:\Users\jasdeep\source\repos\youtubedemonetcore\bin\Debug\net5.0\youtubedemonetcore.Views.pdb
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.RazorAssemblyInfo.cache
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.RazorAssemblyInfo.cs
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.TagHelpers.input.cache
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.TagHelpers.output.cache
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.RazorCoreGenerate.cache
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.RazorTargetAssemblyInfo.cs
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.Views.pdb
+C:\Users\jasdeep\source\repos\youtubedemonetcore\obj\Debug\net5.0\youtubedemonetcore.csproj.CopyComplete
