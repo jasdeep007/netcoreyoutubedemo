@@ -41,8 +41,8 @@ namespace youtubedemonetcore
             //services.AddScoped<IEmployee, EmployeeRepository>();
             //services.AddTransient<IEmployee, EmployeeRepository>();
 
-            //services.AddMvc(options => options.EnableEndpointRouting = false);
-            services.AddControllersWithViews (options => options.EnableEndpointRouting = false);
+            services.AddMvc(options => options.EnableEndpointRouting = false);
+            //services.AddControllersWithViews (options => options.EnableEndpointRouting = false);
 
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,9 +69,9 @@ namespace youtubedemonetcore
             // lets add it
             app.UseMvcWithDefaultRoute();
 
-            app.Run(async (context) => {
-                await context.Response.WriteAsync($"Current Environment is : {env.EnvironmentName}");
-            });
+            //app.Run(async (context) => {
+            //    await context.Response.WriteAsync($"Current Environment is : {env.EnvironmentName}");
+            //});
 
         }
     }

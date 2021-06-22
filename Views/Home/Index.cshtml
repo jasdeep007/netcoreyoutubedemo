@@ -1,1 +1,33 @@
-﻿<h1>Hi I am from index razor view from Home component and index Action</h1>
+﻿@using youtubedemonetcore.models;
+@using Newtonsoft.Json;
+
+
+<a href="/home/other">Take me to Other controller view</a>
+<h1> I am from Index page </h1>
+
+
+
+@{
+    var empdata = JsonConvert.DeserializeObject<List<Employee>>(TempData.Peek("Data").ToString());
+    
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Department</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in empdata)
+        {
+            <tr>
+                <td>@data.Id</td>
+                <td>@data.Department</td>
+                <td>@data.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

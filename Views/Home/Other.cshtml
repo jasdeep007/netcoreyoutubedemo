@@ -1,0 +1,26 @@
+﻿@using youtubedemonetcore.models;
+@using Newtonsoft.Json;
+
+@{
+    var empdata = JsonConvert.DeserializeObject<List<Employee>>(TempData["Data"].ToString());
+
+}
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Department</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var data in empdata)
+        {
+            <tr>
+                <td>@data.Id</td>
+                <td>@data.Department</td>
+                <td>@data.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

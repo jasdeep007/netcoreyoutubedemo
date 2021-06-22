@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +24,14 @@ namespace youtubedemonetcore.Controllers
         }
         public IActionResult Index()
         {
-            // return data with 200 status code
-            // lets run the code and see the output
-            // Error occured... WHY ??????
-            //
-            return Json(emp.GetEmployee());
+            TempData["Data"] = JsonConvert.SerializeObject(emp.GetEmployee());
+            
+            // now directly other controller will open
+            return View();
+        }
+        public IActionResult Other()
+        {
+            return View();
         }
     }
 }
