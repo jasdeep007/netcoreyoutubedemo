@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -11,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using youtubedemonetcore.authorization;
 using youtubedemonetcore.models;
 
 namespace youtubedemonetcore
@@ -37,7 +39,12 @@ namespace youtubedemonetcore
             // single object throughout the application
             // we have other 2 also
             // we will discuss them
+            //services.AddSingleton<IcheckToken, CheckToken>(); // here we map interface to class...cool
+            services.AddSingleton<tokenverify>(); // lets build it
+            services.AddSingleton<IcheckToken, CheckToken>();
+            
             services.AddSingleton<IEmployee, AnnotherClass>();
+            
             //services.AddScoped<IEmployee, EmployeeRepository>();
             //services.AddTransient<IEmployee, EmployeeRepository>();
 

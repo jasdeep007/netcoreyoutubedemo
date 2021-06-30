@@ -16,7 +16,9 @@ namespace youtubedemonetcore.Controllers
 
         //lets get httpget api
         [HttpGet]
-        [tokenverify] // use as a filter,,,,so easy ,, right ????
+        [ServiceFilter(typeof(tokenverify))] // use as a filter,,,,so easy ,, right ????
+        // let use service filter for now
+        //[TypeFilter(typeof(tokenverify))]
         public string tokenrequest()
         {
             return "youtube.outtm.com offers free learning";
