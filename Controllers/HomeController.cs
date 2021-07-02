@@ -29,7 +29,8 @@ namespace youtubedemonetcore.Controllers
             // now directly other controller will open
             return View();
         }
-        public IActionResult Other()
+
+        public IActionResult Chat()
         {
             return View();
         }

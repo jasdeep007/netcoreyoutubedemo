@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using youtubedemonetcore.authorization;
+using youtubedemonetcore.Hubs;
 using youtubedemonetcore.models;
 
 namespace youtubedemonetcore
@@ -30,16 +31,7 @@ namespace youtubedemonetcore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // here we tell project that we have bind interface
-            // with EmployeeRepository class only
-            // Also we use AddSingleton, 
-            // that we will discuss in future video
-
-            //For timing, lets think that it is used to create
-            // single object throughout the application
-            // we have other 2 also
-            // we will discuss them
-            //services.AddSingleton<IcheckToken, CheckToken>(); // here we map interface to class...cool
+            services.AddSingleton<Iusers, chatuserscount>();
             services.AddSingleton<tokenverify>(); // lets build it
             services.AddSingleton<IcheckToken, CheckToken>();
             
@@ -49,6 +41,7 @@ namespace youtubedemonetcore
             //services.AddTransient<IEmployee, EmployeeRepository>();
 
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddSignalR();
             //services.AddControllersWithViews (options => options.EnableEndpointRouting = false);
 
         }
@@ -72,6 +65,11 @@ namespace youtubedemonetcore
             // Also use it after use static files middleware
             // because for static files we do not want any routing
             app.UseStaticFiles();
+            app.UseRouting();
+            app.UseEndpoints(endpoints => {
+                endpoints.MapRazorPages();
+                endpoints.MapHub<ChatHub>("/chatHub");
+            });
             // because we do add any routing now
             // lets add it
             app.UseMvcWithDefaultRoute();
