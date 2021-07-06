@@ -1,6 +1,6 @@
 ﻿@using youtubedemonetcore.models;
 @using Newtonsoft.Json;
-
+@inject IEmployee emp;
 
 <a href="/home/other">Take me to Other controller view</a>
 <h1> I am from Index page </h1>
@@ -8,10 +8,12 @@
 
 
 @{
-    var empdata = JsonConvert.DeserializeObject<List<Employee>>(TempData.Peek("Data").ToString());
-    
+    var empdata = JsonConvert.DeserializeObject<List<Employee>>(TempData.Peek("Data").ToString());    
 }
+<h1>Count from CLASS METHOD CALL IN SAME REQUEST : @emp.EmployeeCount().ToString()</h1>
+<h1>Count from SAME DATA WE GET ABOVE IN TEMPDATA WITHOUT SEPARATE CALL : @empdata.Count().ToString()</h1>
 
+<a href="/home/createEmployee">CREATE NEW EMPLOYEE AND REFIRECT TO INDEX PAGE AGAIN</a>
 <table>
     <thead>
         <tr>

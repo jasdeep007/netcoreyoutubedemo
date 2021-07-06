@@ -7,86 +7,26 @@ namespace youtubedemonetcore.models
 {
     public class AnnotherClass : IEmployee
     {
+        //let make this class have single object,, so that we can add methods to get count or to add employee
+        List<Employee> emp;
+        public AnnotherClass()
+        {
+            emp = new List<Employee>();
+        }
+
+        public void AddEmployee(Employee employee)
+        {
+            emp.Add(employee);
+        }
+
+        public int EmployeeCount()
+        {
+            return emp.Count();
+        }
+
         public List<Employee> GetEmployee()
         {
-            return new List<Employee>() {
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-            };
+            return emp;
         }
     }
 }

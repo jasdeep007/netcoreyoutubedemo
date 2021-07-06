@@ -22,42 +22,42 @@ namespace youtubedemonetcore.Controllers
         }
 
 
-        [HttpGet]
-        [Route("[action]")]
-        public async Task<IActionResult> longrun()
-        {
-            // lets run both
-            var starttime = DateTime.Now.ToString();
-            var t1 = executelong(); // simple syntax
-            var t2 = executelongafter10seconds(); // takes 10 seconds,, right??
-            var t3 = executelong1after10seconds();
+        //[HttpGet]
+        //[Route("[action]")]
+        //public async Task<IActionResult> longrun()
+        //{
+        //    // lets run both
+        //    var starttime = DateTime.Now.ToString();
+        //    var t1 = executelong(); // simple syntax
+        //    var t2 = executelongafter10seconds(); // takes 10 seconds,, right??
+        //    var t3 = executelong1after10seconds();
 
-            var t4 = e1xecutelong1after10seconds();
-            var t5 = e2xecutelong1after10seconds();
-            var t6 = e3xecutelong1after10seconds();
-            var t7 = e4xecutelong1after10seconds();
-            var endtime = DateTime.Now.ToString();
+        //    var t4 = e1xecutelong1after10seconds();
+        //    var t5 = e2xecutelong1after10seconds();
+        //    var t6 = e3xecutelong1after10seconds();
+        //    var t7 = e4xecutelong1after10seconds();
+        //    var endtime = DateTime.Now.ToString();
 
-            var result = new
-            {
-                starttime=starttime,
-                endtime=endtime,
-                t1=t1,
-                t2=t2,
-                t3=t3,
-                t4=t4,
-                t5=t5,
-                t6=t6,
-                t7=t7
-            };
-            // so total without async is 80 seconds,,,
-            // and with async its just 30 seconds... lets see
+        //    var result = new
+        //    {
+        //        starttime=starttime,
+        //        endtime=endtime,
+        //        t1=t1,
+        //        t2=t2,
+        //        t3=t3,
+        //        t4=t4,
+        //        t5=t5,
+        //        t6=t6,
+        //        t7=t7
+        //    };
+        //    // so total without async is 80 seconds,,,
+        //    // and with async its just 30 seconds... lets see
 
 
 
-            // lets see the output
-            return Ok(result);
-        }
+        //    // lets see the output
+        //    return Ok(result);
+        //}
         public string executelong()
         {
             Thread.Sleep(30000);// add 30 seconds wait

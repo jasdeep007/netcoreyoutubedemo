@@ -10,6 +10,19 @@ namespace youtubedemonetcore.models
     // youtube.outtm.com
     public class EmployeeRepository : IEmployee
     {
+
+        // this is other class from same interface,,,
+        // but we are not using it,, so we can ignore it..
+        public void AddEmployee(Employee emp)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int EmployeeCount()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Employee> GetEmployee()
         {
             return new List<Employee>() {

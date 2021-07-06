@@ -29,6 +29,18 @@ namespace youtubedemonetcore.Controllers
             // now directly other controller will open
             return View();
         }
+        //lets add one basic create method,, simple get request to create
+        // will make good one in future with proper post requests
+
+        public IActionResult createEmployee()
+        {
+            // from here it will create it,, then create new request to index
+            // NOTE:: this is one request and to index then other request////
+            emp.AddEmployee(new Employee() { Id = 1, Department = "HR", Name = "employee name added from class method" });
+            TempData["Data"] = JsonConvert.SerializeObject(emp.GetEmployee());
+            return View("index");
+        }
+
 
         public IActionResult Chat()
         {
