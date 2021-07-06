@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using youtubedemonetcore.db;
 
 namespace youtubedemonetcore.models
 {
@@ -10,7 +11,11 @@ namespace youtubedemonetcore.models
     // youtube.outtm.com
     public class EmployeeRepository : IEmployee
     {
-
+        private readonly dbOperations _db;
+        public EmployeeRepository(dbOperations db)
+        {
+            this._db = db;
+        }
         // this is other class from same interface,,,
         // but we are not using it,, so we can ignore it..
         public void AddEmployee(Employee emp)
@@ -20,17 +25,15 @@ namespace youtubedemonetcore.models
 
         public int EmployeeCount()
         {
-            throw new NotImplementedException();
+            return _db.Employees.Count();
         }
 
         public List<Employee> GetEmployee()
         {
-            return new List<Employee>() {
-                new Employee(){ Id=1,Department="HR",Name="employee one"},
-                new Employee(){ Id=2,Department="IT",Name="employee two"},
-                new Employee(){ Id=3,Department="MANAGEMENT",Name="employee three"},
-                new Employee(){ Id=4,Department="HR",Name="employee four"},
-            };
+            // return all employees here
+            return _db.Employees.ToList();
         }
+
+        // lets run it
     }
 }

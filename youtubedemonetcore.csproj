@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <UserSecretsId>e10a471a-1d03-4ee9-9ba2-eb72d4444776</UserSecretsId>
     <!--<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>-->
   </PropertyGroup>

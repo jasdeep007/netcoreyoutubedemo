@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -13,6 +14,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using youtubedemonetcore.authorization;
+using youtubedemonetcore.db;
 using youtubedemonetcore.Hubs;
 using youtubedemonetcore.models;
 
@@ -31,11 +33,21 @@ namespace youtubedemonetcore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // now we define connection string,,
+            // so that it will know what database to connect
+            services.AddDbContextPool<dbOperations>(
+                options => options.UseSqlServer(config.GetConnectionString("dbconnectionstring"))
+                );
+
+            // also we will take connection string from 
+            // app setting... using predefined json attribute
+            // lets define connection string quickly
+
             services.AddSingleton<Iusers, chatuserscount>();
             services.AddSingleton<tokenverify>(); // lets build it
             services.AddSingleton<IcheckToken, CheckToken>();
             
-            services.AddSingleton<IEmployee, AnnotherClass>();
+            services.AddScoped<IEmployee, EmployeeRepository>();
             
             //services.AddScoped<IEmployee, EmployeeRepository>();
             //services.AddTransient<IEmployee, EmployeeRepository>();
