@@ -12,7 +12,10 @@ namespace youtubedemonetcore.models
 
         public int EmployeeCount();
 
-        public void AddEmployee(Employee emp);
+        // lets rectify it
+        public Task<Employee> AddEmployee(Employee emp);
+
+        public Task<int> DeleteEmployee(int id);
 
     }
 }

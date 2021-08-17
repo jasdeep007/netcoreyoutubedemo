@@ -14,6 +14,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using youtubedemonetcore.authorization;
+using youtubedemonetcore.configclasses;
 using youtubedemonetcore.db;
 using youtubedemonetcore.Hubs;
 using youtubedemonetcore.models;
@@ -39,6 +40,23 @@ namespace youtubedemonetcore
                 options => options.UseSqlServer(config.GetConnectionString("dbconnectionstring"))
                 );
 
+            // we use configure here to tell .net core about ConnectionStrings class
+            services.Configure<ConnectionStrings>(
+                a => config.GetSection(nameof(ConnectionStrings)).Bind(a)
+                );
+            // what we do here,,
+            // we bind our class to section of appsetting file
+            // now how we can use it,,,,
+            // there comes our first option that is IOption
+            // lets use it
+
+
+
+
+
+
+
+
             // also we will take connection string from 
             // app setting... using predefined json attribute
             // lets define connection string quickly
@@ -46,9 +64,9 @@ namespace youtubedemonetcore
             services.AddSingleton<Iusers, chatuserscount>();
             services.AddSingleton<tokenverify>(); // lets build it
             services.AddSingleton<IcheckToken, CheckToken>();
-            
+
             services.AddScoped<IEmployee, EmployeeRepository>();
-            
+
             //services.AddScoped<IEmployee, EmployeeRepository>();
             //services.AddTransient<IEmployee, EmployeeRepository>();
 
@@ -78,7 +96,8 @@ namespace youtubedemonetcore
             // because for static files we do not want any routing
             app.UseStaticFiles();
             app.UseRouting();
-            app.UseEndpoints(endpoints => {
+            app.UseEndpoints(endpoints =>
+            {
                 endpoints.MapRazorPages();
                 endpoints.MapHub<ChatHub>("/chatHub");
             });

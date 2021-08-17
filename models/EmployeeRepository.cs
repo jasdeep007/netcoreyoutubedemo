@@ -16,11 +16,25 @@ namespace youtubedemonetcore.models
         {
             this._db = db;
         }
-        // this is other class from same interface,,,
-        // but we are not using it,, so we can ignore it..
-        public void AddEmployee(Employee emp)
+
+
+        // lets convert it into task to create/ add employee
+        // its inherited from interface,,lets change there too
+        // this is for EF Core
+        public async Task<Employee> AddEmployee(Employee emp)
         {
-            throw new NotImplementedException();
+            // saving with tasks are performant
+            // let see overall flow now
+            _db.Employees.Add(emp);
+            await _db.SaveChangesAsync();
+            return emp;
+        }
+
+        public async Task<int> DeleteEmployee(int id)
+        {
+            _db.Employees.Remove(_db.Employees.First(x=>x.Id==id));
+            await _db.SaveChangesAsync();
+            return id;
         }
 
         public int EmployeeCount()

@@ -20,6 +20,7 @@
             <th>Id</th>
             <th>Department</th>
             <th>Name</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -29,6 +30,7 @@
                 <td>@data.Id</td>
                 <td>@data.Department</td>
                 <td>@data.Name</td>
+                <td><a href="/home/deleteemployee/@data.Id">Delete</a></td>
             </tr>
         }
     </tbody>
