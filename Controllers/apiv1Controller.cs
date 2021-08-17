@@ -19,14 +19,17 @@ namespace youtubedemonetcore.Controllers
         private readonly IEmployee emp;
         private readonly IConfiguration config;
         public IOptions<ConnectionStrings> Ioptionconfig;
+        public IOptionsSnapshot<ConnectionStrings> ioptionssnapshotconfig;
 
         //lets import IEmployee by dependency injection
         public apiv1Controller(IEmployee emp, IConfiguration _config,
-            IOptions<ConnectionStrings> ioptionconfig)
+            IOptions<ConnectionStrings> ioptionconfig,
+            IOptionsSnapshot<ConnectionStrings> ioptionssnapshotconfig)
         {
             this.emp = emp;
             this.config = _config;
             Ioptionconfig = ioptionconfig;
+            this.ioptionssnapshotconfig = ioptionssnapshotconfig;
         }
 
         // Its the same project I am working for this video series
@@ -38,15 +41,13 @@ namespace youtubedemonetcore.Controllers
         {
             //var result = config["ConnectionStrings:dbconnectionstring"].ToString();
             var result = Ioptionconfig.Value.dbconnectionstring;
-            // so now there will be no chance of error
-            // lets try to change it
-            // we got compile time error
-            // lets run it
-            return Ok(new { r = result });
+            // lets read new property value
+            var result1 = ioptionssnapshotconfig.Value.otherproperty;
+            return Ok(new { IOptions = result, IOptionsSnapshot=result1 });
         }
 
 
-
+        // lets build it and see 
 
 
 

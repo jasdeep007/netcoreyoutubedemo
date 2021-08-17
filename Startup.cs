@@ -44,11 +44,9 @@ namespace youtubedemonetcore
             services.Configure<ConnectionStrings>(
                 a => config.GetSection(nameof(ConnectionStrings)).Bind(a)
                 );
-            // what we do here,,
-            // we bind our class to section of appsetting file
-            // now how we can use it,,,,
-            // there comes our first option that is IOption
-            // lets use it
+          
+
+            // nothing to do here,, bcs class is already bind
 
 
 
