@@ -17,19 +17,17 @@ namespace youtubedemonetcore.Controllers
     public class apiv1Controller : ControllerBase
     {
         private readonly IEmployee emp;
+        private readonly IValueChecker vc;
         private readonly IConfiguration config;
-        public IOptions<ConnectionStrings> Ioptionconfig;
-        public IOptionsSnapshot<ConnectionStrings> ioptionssnapshotconfig;
+      
 
         //lets import IEmployee by dependency injection
-        public apiv1Controller(IEmployee emp, IConfiguration _config,
-            IOptions<ConnectionStrings> ioptionconfig,
-            IOptionsSnapshot<ConnectionStrings> ioptionssnapshotconfig)
+        public apiv1Controller(IEmployee emp, IValueChecker vc, IConfiguration _config)
         {
             this.emp = emp;
+            this.vc = vc;
             this.config = _config;
-            Ioptionconfig = ioptionconfig;
-            this.ioptionssnapshotconfig = ioptionssnapshotconfig;
+          
         }
 
         // Its the same project I am working for this video series
@@ -39,11 +37,10 @@ namespace youtubedemonetcore.Controllers
         [Route("[action]")]
         public IActionResult readconfigfilevaluesimply()
         {
-            //var result = config["ConnectionStrings:dbconnectionstring"].ToString();
-            var result = Ioptionconfig.Value.dbconnectionstring;
-            // lets read new property value
-            var result1 = ioptionssnapshotconfig.Value.otherproperty;
-            return Ok(new { IOptions = result, IOptionsSnapshot=result1 });
+            return Ok(vc.checkvalue());
+            // whatever we were doing here,,now we are doing it in class...
+
+            // now import that class with singleton in startup
         }
 
 

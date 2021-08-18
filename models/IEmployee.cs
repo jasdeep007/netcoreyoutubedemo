@@ -9,13 +9,14 @@ namespace youtubedemonetcore.models
     {
         // To get all Employees
         public List<Employee> GetEmployee();// will implement it in base class
-
         public int EmployeeCount();
-
         // lets rectify it
         public Task<Employee> AddEmployee(Employee emp);
-
         public Task<int> DeleteEmployee(int id);
-
+    }
+    public interface IValueChecker
+    {
+        public object checkvalue();
+        // simple,,lets inherit it
     }
 }

@@ -41,10 +41,17 @@ namespace youtubedemonetcore
                 );
 
             // we use configure here to tell .net core about ConnectionStrings class
+            //services.Configure<ConnectionStrings>(
+            //    a => config.GetSection(nameof(ConnectionStrings)).Bind(a)
+            //    );
+
+            // HERE YOU NEED TO DO ONE EXTRA CHANGE
             services.Configure<ConnectionStrings>(
-                a => config.GetSection(nameof(ConnectionStrings)).Bind(a)
-                );
-          
+            config.GetSection(nameof(ConnectionStrings))
+            );
+            // WE DO NOT NEED BIND HERE
+
+
 
             // nothing to do here,, bcs class is already bind
 
@@ -63,8 +70,8 @@ namespace youtubedemonetcore
             services.AddSingleton<tokenverify>(); // lets build it
             services.AddSingleton<IcheckToken, CheckToken>();
 
-            services.AddScoped<IEmployee, EmployeeRepository>();
-
+            services.AddSingleton<IEmployee, AnnotherClass>();
+            services.AddSingleton<IValueChecker, AnnotherClass>();
             //services.AddScoped<IEmployee, EmployeeRepository>();
             //services.AddTransient<IEmployee, EmployeeRepository>();
 

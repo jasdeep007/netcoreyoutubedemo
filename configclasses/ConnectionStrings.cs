@@ -12,8 +12,3 @@ namespace youtubedemonetcore.configclasses
         public string otherproperty { get; set; }
     }
 }
-
-// Lets make 2 properties here,,,to read 2 properties fom config file
-
-// now we need same in config file too,, right,,
-// lets add it in appsettings.json
